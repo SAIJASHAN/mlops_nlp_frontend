@@ -1,0 +1,6 @@
+import { Bell, Menu, Search, ShieldCheck, Sparkles } from 'lucide-react';
+const titles = { dashboard: ['Overview', 'Monitor your complaint intelligence workspace.'], analyzer: ['Complaint analyzer', 'Classify a banking complaint with the live NLP model.'], history: ['Prediction history', 'Review and export analyses from this browser session.'], model: ['Model & research', 'Explore the model baseline, task definition and inference pipeline.'] };
+export default function Navbar({ page, onMenu, apiStatus }) {
+  const [title, subtitle] = titles[page];
+  return <header className="topbar"><div className="topbar-left"><button className="mobile-menu icon-button" onClick={onMenu}><Menu size={19}/></button><div className="breadcrumbs"><span>WORKSPACE</span><b>/</b><strong>{title}</strong></div><p>{subtitle}</p></div><div className="topbar-actions"><div className={`api-pill ${apiStatus === 'online' ? 'online' : apiStatus === 'checking' ? 'checking' : 'offline'}`}><span/>{apiStatus === 'online' ? 'API connected' : apiStatus === 'checking' ? 'Waking API…' : 'API unavailable'}</div><button className="icon-button" title="Search"><Search size={17}/></button><button className="icon-button" title="Notifications"><Bell size={17}/></button><div className="avatar">CO</div></div></header>;
+}
