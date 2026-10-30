@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://complaintops-api.onrender.com/:path*"
+    }
+  ]
+}

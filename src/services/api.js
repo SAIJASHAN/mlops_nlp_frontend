@@ -1,7 +1,7 @@
 // Local development uses the Vite proxy to avoid browser CORS restrictions.
 // The proxy forwards /api/* to this deployed API without changing the backend.
 const API_BASE = 'https://complaintops-api.onrender.com';
-const API_ROOT = import.meta.env.DEV ? '/api' : API_BASE;
+const API_ROOT = '/api';
 
 async function request(path, options = {}) {
   let response;
